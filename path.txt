@@ -1,0 +1,17 @@
+gfg, interviewbit, leetcode 
+Array 
+String
+min = interviewbit
+linked list
+stack
+queue
+min = interviewbit
+tree based ds
+bt
+bst
+tries
+heap
+min = leetcode
+graph
+min = gfg, interview bit
+dp

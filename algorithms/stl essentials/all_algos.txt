@@ -1,0 +1,125 @@
+STL Algorithms|||||||||||||||||||||||||||||||                       
+---------------------------------------------
+Heap
+---------------------------------------------
+std::make_heap(begin(numbers), end(numbers));
+std::push_heap(begin(numbers), end(numbers));
+std::pop_heap(begin(numbers), end(numbers));
+---------------------------------------------
+Sorting
+---------------------------------------------
+sort
+partial_sort
+nth_element
+sort_heap
+inplace_merge
+---------------------------------------------
+Partitioning
+---------------------------------------------
+partition
+partition_point
+---------------------------------------------
+Other permutations
+---------------------------------------------
+rotate
+shuffle
+next_permutation
+prev_permutation
+reverse
+---------------------------------------------
+partitioning-sort-heap
+---------------------------------------------
+stable_*  (stable_sort, stable_partition)
+is_*  (is_sorted, is_partitioned, is_heap) -> returns a boolean
+is_*_until(is_sorted_until, is_heap_until, is_heap_until) -> returns an iterator. Ex. if is_sorted_until is applied on a sorted collection the end of that collection is returned.
+---------------------------------------------
+numeric algorithms
+---------------------------------------------
+count
+accumulate
+partial_sum
+(transform_)inclusive_scan
+(transform_)exclusive_scan
+inner_product
+adjacent_difference
+sample
+---------------------------------------------
+querying a property
+---------------------------------------------
+all_of
+any_of
+none_of
+---------------------------------------------
+querying a property on 2 ranges
+---------------------------------------------
+equal
+lexicographical_compare
+mismatch
+---------------------------------------------
+searching a value
+---------------------------------------------
+find --> not sorted collection
+adjacent_find --> not sorted collection
+equal_range --> sorted collection
+lower_bound --> sorted collection
+upper_bound --> sorted collection
+binary_search --> sorted collection
+---------------------------------------------
+searching a range
+---------------------------------------------
+search
+find_end
+find_first_of
+---------------------------------------------
+searching a relative value
+---------------------------------------------
+max_element
+min_element
+minmax_element --> returns std::pair<iterator, iterator>
+---------------------------------------------
+algorithms on sets
+---------------------------------------------
+set_difference --> sorted collection
+set_intersecion --> sorted collection
+set_union
+set_symmetric_difference
+includes
+merge
+---------------------------------------------
+movers
+---------------------------------------------
+copy
+move
+swap_ranges
+copy_backward
+move_backward
+---------------------------------------------
+modifiers
+---------------------------------------------
+fill
+generate
+iota
+replace
+---------------------------------------------
+structure changer
+---------------------------------------------
+remove
+erase
+unique
+*_copy(remove_copy, unique_copy, reverse_copy, rotate_copy, replace_copy, partition_copy, partial_sort_copy,..)
+*_if(find_if, find_if_not, count_if,...)
+---------------------------------------------
+transform
+for_each
+---------------------------------------------
+raw memory
+---------------------------------------------
+uninitialized_fill
+uninitialized_copy
+uninitialized_move
+destroy
+uninitialized_default_construct
+uninitialized_value_construct
+destroy_n
+fill_n
+
