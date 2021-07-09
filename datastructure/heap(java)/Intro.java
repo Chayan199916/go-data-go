@@ -1,7 +1,9 @@
 
 // Java program to demonstrate working
-// of PriorityQueue as a Max Heap
-import java.util.*;
+// of PriorityQueue as a Max Heap (default one is Min heap)
+import java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Iterator;
 
 class Example {
     public static void main(String args[]) {

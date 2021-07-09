@@ -1,0 +1,5 @@
+input : [6, 5, 3, 2, 8, 9, 10]; k = 3
+So if we sort this array using O(nlogn), result : [2, 3, 5, 6, 8, 9, 10];
+Here, k sorted means that the element which was supposed to be at ith loc in sorted list,
+is present in the range [i-k, i+k];provided i-k >= 0;
+ex : 2 which is present at 0th loc in sorted list, present within range [0, 0 + 3]

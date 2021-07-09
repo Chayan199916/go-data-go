@@ -1,0 +1,8 @@
+1. representation : using stack (we'll restrict the size at k)
+2. identification : a. k b. smallest/largest
+3. which one to choose : a. k + smallest -> max heap b. k + largest -> min heap
+4. all heap questions can be solved using sorting too. but in that case time complexity would be
+O(nlogn). using heap, this will reduce to O(nlogk).
+5. Reason behind choosing max heap and min heap for smallest and largest respectively :
+if we are asked to find kth largest element then we will use min heap and we'll restrict size of heap to k so that
+all (n - k) smallest elements which are unnecessary to work upon, are discarded.
