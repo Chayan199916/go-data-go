@@ -1,0 +1,5 @@
+list of numbers : { 10, 2, 14, 4, 7, 6 }
+k = 3
+closest to = 5
+so we calculated new list of numbers {(5 - 10), (5 - 2), (5 - 14), ....}
+among these numbers, those which are minimum, such 3 elements are shown as output.

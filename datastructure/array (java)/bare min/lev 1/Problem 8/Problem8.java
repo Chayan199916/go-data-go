@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Hashtable;
 
 /**
  * Find the frequency of a number in an array Difficulty Level : Easy; Given an
