@@ -1,0 +1,33 @@
+1. making i/p smaller. We don't intend to make i/p smaller. We take decision. Based on that decision,
+i/p gets smaller automatically.
+2. when to use recursion?
+choices are given and depending on that choices, we take decisions.
+ex : subset problem
+
+        a   b   c       ; 0 means not choosing; 1 means choosing;
+""      0   0   0
+"a"     1   0   0
+"b"     0   1   0
+"c"     0   0   1
+"ab"    1   1   0
+"bc"    0   1   1
+"ac"    1   0   1
+"abc"   1   1   1
+
+recursion = choices + decisions;
+
+recursive tree is a way to represent those decisions;
+
+3. recursive tree generation : i/p - o/p method;
+
+# of branches = # of choices;
+
+4. another approach : Induction Base Condition Hypothesis; (Tree, Linked List)
+Base Condition : Smallest valid input;
+
+easy problems : IBH
+medium problems : recursive tree;
+hard problems : choice diagram;
+
+Hypothesis -> It's your function; Design it however you want;
+Depending on how you implement induction, hypothesis will work accordingly.
