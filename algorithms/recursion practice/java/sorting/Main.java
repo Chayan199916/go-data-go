@@ -3,8 +3,10 @@ import java.util.Arrays;
 class Main {
     public static void main(String[] args) {
         int numbers[] = { 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-        int result[] = mergesort(numbers);
-        System.out.println(Arrays.toString(result));
+        // int result[] = mergesort(numbers);
+        // System.out.println(Arrays.toString(result));
+        quickSort(numbers, 0, numbers.length - 1);
+        System.out.println(Arrays.toString(numbers));
     }
 
     static void bubbleSort(int numbers[], int row, int col, boolean flag) {
@@ -103,5 +105,29 @@ class Main {
         while (j < right.length)
             merged[k++] = right[j++];
         return merged;
+    }
+
+    static void quickSort(int nums[], int start, int end) {
+        if (start >= end)
+            return;
+        int s = start;
+        int e = end;
+        int p = s + (e - s) / 2;
+        int pivot = nums[p];
+        while (s <= e) {
+            while (nums[s] < pivot)
+                s++;
+            while (nums[e] > pivot)
+                e--;
+            if (s <= e) {
+                int temp = nums[s];
+                nums[s] = nums[e];
+                nums[e] = temp;
+                s++;
+                e--;
+            }
+        }
+        quickSort(nums, start, e);
+        quickSort(nums, s, end);
     }
 }
