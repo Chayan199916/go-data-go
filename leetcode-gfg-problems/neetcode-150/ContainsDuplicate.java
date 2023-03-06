@@ -5,7 +5,7 @@ import java.util.HashMap;
  * in the array, and return false if every element is distinct.
  */
 public class ContainsDuplicate {
-    private static int[] nums;
+    private int[] nums;
 
     public ContainsDuplicate(int[] nums) {
         this.nums = nums;
