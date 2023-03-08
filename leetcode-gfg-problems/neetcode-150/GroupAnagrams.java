@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,33 +13,30 @@ import java.util.Map;
  * once.
  */
 public class GroupAnagrams {
-    public static void groupAnagrams(String[] strs) {
-        List<List<String>> result = new ArrayList<List<String>>();
-        List<Map<String, Integer>> freqMapList = new ArrayList<Map<String, Integer>>();
-        for (int i = 0; i < strs.length; i++) {
-            HashMap<String, Integer> map = new HashMap<String, Integer>();
-            createFreqencies(map, strs[i]);
-            freqMapList.add(map);
-        }
-    }
-
-    public static void createFreqencies(HashMap<String, Integer> frequencies, String src) {
-        for (String ch : src.split("")) {
-            if (frequencies.containsKey(ch)) {
-                frequencies.put(ch, frequencies.get(ch) + 1);
-            } else {
-                frequencies.put(ch, 1);
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+        if (strs.length == 0)
+            return res;
+        HashMap<String, List<String>> map = new HashMap<>();
+        for (String s : strs) {
+            int[] hash = new int[26];
+            for (char c : s.toCharArray()) {
+                hash[c - 'a']++;
             }
+            String key = Arrays.toString(hash);
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(s);
         }
+        res.addAll(map.values());
+        return res;
     }
 
-    // public List<List<String>> checkGroupAnagrams(List<Map<String, Integer>>
-    // frequencies, String str) {
-    // List<Map<String, Integer>> freqCp = frequencies;
-
-    // return result;
-    // }
     public static void main(String[] args) {
-        groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+        for (List<String> resStr : groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" })) {
+            String[] res = resStr.toArray(new String[resStr.size()]);
+            System.out.println(Arrays.toString(res));
+        }
     }
 }
