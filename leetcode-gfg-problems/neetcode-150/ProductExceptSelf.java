@@ -5,6 +5,25 @@ import java.util.Arrays;
  * equal to the product of all the elements of nums except nums[i].
  */
 public class ProductExceptSelf {
+    public static int[] calculateProductExceptSelfWOUsingDivision(int[] nums) {
+        int[] prefixProductArr = new int[nums.length];
+        int[] suffixProductArr = new int[nums.length];
+        prefixProductArr[0] = nums[0];
+        suffixProductArr[nums.length - 1] = nums[nums.length - 1];
+        for (int i = 1; i < nums.length; i++) {
+            prefixProductArr[i] = nums[i] * prefixProductArr[i - 1];
+        }
+        for (int i = nums.length - 2; i >= 0; i--) {
+            suffixProductArr[i] = nums[i] * suffixProductArr[i + 1];
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int suffixProduct = i + 1 == nums.length ? 1 : suffixProductArr[i + 1];
+            int prefixProduct = i - 1 == -1 ? 1 : prefixProductArr[i - 1];
+            nums[i] = suffixProduct * prefixProduct;
+        }
+        return nums;
+    }
+
     public static int[] calculateProductExceptSelfUsingDivision(int[] nums) {
         int productOfNums = 1;
         boolean zeroFlag = false;
@@ -22,7 +41,7 @@ public class ProductExceptSelf {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(calculateProductExceptSelfUsingDivision(new int[] { 1, 2, 3, 4 })));
-        System.out.println(Arrays.toString(calculateProductExceptSelfUsingDivision(new int[] { -1, 1, 0, -3, 3 })));
+        System.out.println(Arrays.toString(calculateProductExceptSelfWOUsingDivision(new int[] { 1, 2, 3, 4 })));
+        System.out.println(Arrays.toString(calculateProductExceptSelfWOUsingDivision(new int[] { -1, 1, 0, -3, 3 })));
     }
 }
