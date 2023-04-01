@@ -25,4 +25,24 @@ public class TrappingRainWater {
         }
         return trappedWaterAmount;
     }
+
+    public int trapTwoPointers(int[] height) {
+        int trappedWater = 0;
+        int leftPointer = 0;
+        int rightPointer = height.length - 1;
+        int leftMaxHeight = height[leftPointer];
+        int rightMaxHeight = height[rightPointer];
+        while (leftPointer <= rightPointer) {
+            if (leftMaxHeight < rightMaxHeight) {
+                trappedWater += leftMaxHeight - height[leftPointer] < 0 ? 0 : leftMaxHeight - height[leftPointer];
+                leftMaxHeight = Math.max(leftMaxHeight, height[leftPointer]);
+                leftPointer++;
+            } else {
+                trappedWater += rightMaxHeight - height[rightPointer] < 0 ? 0 : rightMaxHeight - height[rightPointer];
+                rightMaxHeight = Math.max(rightMaxHeight, height[rightPointer]);
+                rightPointer--;
+            }
+        }
+        return trappedWater;
+    }
 }
