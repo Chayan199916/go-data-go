@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Union and Intersection of two sorted arrays Difficulty Level : Easy; Given
  * two sorted arrays, find their union and intersection. Example:
@@ -12,6 +15,21 @@
 class Problem12 {
     public static void main(String[] args) {
         findUnionIntersection(new int[] { 2, 5, 6 }, new int[] { 4, 6, 8, 10 });
+    }
+
+    static int findUnionUnsorted(int[] a, int n, int[] b, int m) {
+        Map<Integer, Integer> unionMap = new HashMap<Integer, Integer>();
+        for (int element : a) {
+            if (!unionMap.containsKey(element)) {
+                unionMap.put(element, 0);
+            }
+        }
+        for (int element : b) {
+            if (!unionMap.containsKey(element)) {
+                unionMap.put(element, 0);
+            }
+        }
+        return unionMap.keySet().size();
     }
 
     static void findUnionIntersection(int inputArr1[], int inputArr2[]) {

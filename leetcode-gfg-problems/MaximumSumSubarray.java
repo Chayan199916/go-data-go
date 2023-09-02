@@ -3,21 +3,18 @@ public class MaximumSumSubarray {
         System.out.println(maxSum(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
     }
 
-    private static int maxSum(int[] nums) {
+    private static long maxSum(int[] nums) {
         /**
          * Kadane's algorithm
          */
-        int maxSum = Integer.MIN_VALUE;
-        int tempSum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            tempSum += nums[i];
-            if (tempSum > maxSum) {
-                maxSum = tempSum;
-            }
-            if (tempSum < 0) {
-                tempSum = 0;
-            }
+        long currentMax = nums[0];
+        long globalMax = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            currentMax = Math.max(nums[i], currentMax + nums[i]);
+            globalMax = Math.max(globalMax, currentMax);
         }
-        return maxSum;
+
+        return globalMax;
     }
 }

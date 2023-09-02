@@ -13,6 +13,11 @@ class Problem11 {
         rearrangeNegatives(new int[] { -12, 11, -13, -5, 6, -7, 5, -3, -6 });
     }
 
+    /**
+     * time complexity : O(n)
+     * space complexity : O(1)
+     * relative order of the elements don't remain the same
+     */
     static void rearrangeNegatives(int inputArr[]) {
         int low = 0;
         int high = inputArr.length - 1;
@@ -25,6 +30,22 @@ class Problem11 {
             }
         }
         displayIntArray(inputArr);
+    }
+
+    static void rearrangeNegativesWithRelativeOrder(int inputArr[]) {
+        int[] order = new int[inputArr.length];
+        int index = 0;
+        for (int element : inputArr) {
+            if (element > 0) {
+                order[index++] = element;
+            }
+        }
+        for (int element : inputArr) {
+            if (element < 0) {
+                order[index++] = element;
+            }
+        }
+        System.arraycopy(order, 0, inputArr, 0, inputArr.length);
     }
 
     static void displayIntArray(int inputArr[]) {
