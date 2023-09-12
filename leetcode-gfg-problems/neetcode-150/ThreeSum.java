@@ -38,4 +38,42 @@ public class ThreeSum {
         }
         return new ArrayList<>(res);
     }
+
+    public static List<List<Integer>> threeSumRecursive(int[] nums) {
+        Set<List<Integer>> res = new HashSet<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            List<Integer> sol = threeSumRecursiveUtil(nums, i, i + 1, nums.length - 1);
+            if (sol != null) {
+                res.add(sol);
+            }
+        }
+        return new ArrayList<>(res);
+    }
+
+    public static List<Integer> threeSumRecursiveUtil(int[] nums, int current, int start, int end) {
+        if (start >= end) {
+            return null;
+        }
+        int sum = nums[current] + nums[start] + nums[end];
+        if (sum == 0) {
+            return new ArrayList<>(Arrays.asList(nums[current], nums[start], nums[end]));
+        } else if (sum > 0) {
+            return threeSumRecursiveUtil(nums, current, start, end - 1);
+        } else {
+            return threeSumRecursiveUtil(nums, current, start + 1, end);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
+        Arrays.sort(nums);
+        List<List<Integer>> res = threeSumRecursive(nums);
+        System.out.println(res.size());
+        for (List<Integer> list : res) {
+            for (Integer element : list) {
+                System.out.print(element + " ");
+            }
+            System.out.println(); // Print a newline after each inner list
+        }
+    }
 }
