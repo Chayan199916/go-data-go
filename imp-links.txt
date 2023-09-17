@@ -8,3 +8,14 @@ open source links :
 https://up-for-grabs.net/#/
 https://github.com/MunGell/awesome-for-beginners
 https://www.codetriage.com/
+
+java related blogs : (https://winterbe.com/blog/)
+--------------------
+https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/
+https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
+https://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
+https://winterbe.com/posts/2015/03/25/java8-examples-string-number-math-files/
+https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+https://winterbe.com/posts/2014/03/16/java-8-tutorial/
+https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
+https://winterbe.com/posts/2009/08/12/java-swing-eventbus/
